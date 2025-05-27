@@ -16,11 +16,11 @@ public class ApplicationController {
 
     private final String defaultMessage;
 
-    public ApplicationController(@Value("${hw.message.default}") String defaultMessage) {
+    public ApplicationController(@Value("Thisisadefaultmessage") String defaultMessage) {
         this.defaultMessage = defaultMessage;
     }
 
-    @GetMapping("/application/test")
+    @GetMapping("/cubix/test")
     public CubixResponse demoMessage(@RequestParam(required = false, name = "message") String message) {
         if (!StringUtils.hasText(message)) {
             message = defaultMessage;
